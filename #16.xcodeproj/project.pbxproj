@@ -14,6 +14,7 @@
 		DE10CAD42608D12C00440B4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE10CAD32608D12C00440B4B /* Assets.xcassets */; };
 		DE10CB002608E15000440B4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE10CAFF2608E15000440B4B /* LaunchScreen.storyboard */; };
 		DE10CB0426090A4400440B4B /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10CB0326090A4400440B4B /* GameOverScene.swift */; };
+		DE10CB072609E2EA00440B4B /* atlas.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DE10CB062609E2EA00440B4B /* atlas.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DE10CAD52608D12C00440B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE10CAFF2608E15000440B4B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE10CB0326090A4400440B4B /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		DE10CB062609E2EA00440B4B /* atlas.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = atlas.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				DE10CAC62608D12A00440B4B /* AppDelegate.swift */,
 				DE10CACC2608D12A00440B4B /* GameScene.swift */,
+				DE10CB062609E2EA00440B4B /* atlas.atlas */,
 				DE10CB0326090A4400440B4B /* GameOverScene.swift */,
 				DE10CACE2608D12A00440B4B /* GameViewController.swift */,
 				DE10CAD02608D12A00440B4B /* Main.storyboard */,
@@ -130,6 +133,7 @@
 				DE10CB002608E15000440B4B /* LaunchScreen.storyboard in Resources */,
 				DE10CAD22608D12A00440B4B /* Main.storyboard in Resources */,
 				DE10CAD42608D12C00440B4B /* Assets.xcassets in Resources */,
+				DE10CB072609E2EA00440B4B /* atlas.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
