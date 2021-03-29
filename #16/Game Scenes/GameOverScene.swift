@@ -66,5 +66,4 @@ class GameOverScene: SKScene {
         let transition = SKTransition.flipHorizontal(withDuration: 0.5)
         view?.presentScene(scene, transition: transition)
     }
-
 }

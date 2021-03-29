@@ -5,7 +5,6 @@
 //  Created by Egor Malyshev on 22.03.2021.
 //
 
-import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
@@ -41,7 +40,6 @@ class GameViewController: UIViewController {
         
         pauseViewController = storyboard?.instantiateViewController(identifier: "PauseViewController") as? PauseViewController
         pauseViewController?.delegate = self
-
     }
     
     @IBAction func pauseButtonTapped(_ sender: Any) {
@@ -55,7 +53,6 @@ class GameViewController: UIViewController {
             view.addSubview(vc.view)
             vc.view.frame = view.bounds
     }
-
 }
 
 extension GameViewController: PauseVCDelegate {
@@ -66,10 +63,4 @@ extension GameViewController: PauseVCDelegate {
         guard let skView = view as? SKView else { return }
         skView.isPaused = false
     }
-}
-
-enum SceneType {
-    case circle
-    case square
-    case gameOver
 }

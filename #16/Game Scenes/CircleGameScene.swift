@@ -51,24 +51,7 @@ class CircleGameScene: SKScene {
         addChild(enemy)
         addChild(scoreLabel)
         
-        let plusOneSecond = SKAction.run {
-            self.move(node: self.enemy, to: self.player.position, speed: 120)
-            self.score = self.score + 1 + Double(self.currentEnemyincrease)
-            self.scoreLabel.text = "\(Int(self.score))"
-        }
-        let plusOneSecondDelay = SKAction.wait(forDuration: 1)
-        let sequence = SKAction.sequence([plusOneSecond, plusOneSecondDelay])
-        run(SKAction.repeatForever(sequence))
-        
-        let plusFiveSecond = SKAction.run {
-            self.currentEnemyincrease += 1
-            let newScale = (self.initialRadius + self.currentEnemyincrease) / self.initialRadius
-            self.enemy.setScale(CGFloat(newScale))
-            self.setEnemyPhysicsBodyRadius(CGFloat(self.initialRadius + self.currentEnemyincrease))
-        }
-        let plusFiveSecondDelay = SKAction.wait(forDuration: 5)
-        let secondSequence = SKAction.sequence([plusFiveSecond, plusFiveSecondDelay])
-        run(SKAction.repeatForever(secondSequence))
+        addActions()
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -88,6 +71,27 @@ class CircleGameScene: SKScene {
         player.physicsBody?.categoryBitMask = PhysicsBodyCategory.player
         player.physicsBody?.contactTestBitMask = PhysicsBodyCategory.enemy
         player.physicsBody?.collisionBitMask = PhysicsBodyCategory.none
+    }
+    
+    func addActions(){
+        let plusOneSecond = SKAction.run {
+            self.move(node: self.enemy, to: self.player.position, speed: 120)
+            self.score = self.score + 1 + Double(self.currentEnemyincrease)
+            self.scoreLabel.text = "\(Int(self.score))"
+        }
+        let plusOneSecondDelay = SKAction.wait(forDuration: 1)
+        let sequence = SKAction.sequence([plusOneSecond, plusOneSecondDelay])
+        run(SKAction.repeatForever(sequence))
+        
+        let plusFiveSecond = SKAction.run {
+            self.currentEnemyincrease += 1
+            let newScale = (self.initialRadius + self.currentEnemyincrease) / self.initialRadius
+            self.enemy.setScale(CGFloat(newScale))
+            self.setEnemyPhysicsBodyRadius(CGFloat(self.initialRadius + self.currentEnemyincrease))
+        }
+        let plusFiveSecondDelay = SKAction.wait(forDuration: 5)
+        let secondSequence = SKAction.sequence([plusFiveSecond, plusFiveSecondDelay])
+        run(SKAction.repeatForever(secondSequence))
     }
     
     func loseAction() {
@@ -119,6 +123,7 @@ class CircleGameScene: SKScene {
     }
 }
 
+// MARK: SKPhysicsContactDelegate
 extension CircleGameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.bodyA.categoryBitMask == PhysicsBodyCategory.player &&

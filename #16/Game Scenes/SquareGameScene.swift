@@ -62,6 +62,17 @@ class SquareGameScene: SKScene {
         addChild(ground)
         addChild(scoreLabel)
         
+        addActions()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+        guard !isInAir else { return }
+        move(node: player, to: CGPoint(x: player.size.width, y: player.position.y + player.size.height * 3), speed: 400)
+    }
+    
+    func addActions(){
         let obstacleGeneration = SKAction.run {
             let obstacle = self.createObstacle(speed: self.currentSpeed)
             self.addChild(obstacle)
@@ -78,14 +89,6 @@ class SquareGameScene: SKScene {
         let scoreIncreasingDelay = SKAction.wait(forDuration: 0.1)
         let secondSequence = SKAction.sequence([scoreIncreasing, scoreIncreasingDelay])
         run(SKAction.repeatForever(secondSequence))
-        
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        
-        guard !isInAir else { return }
-        move(node: player, to: CGPoint(x: player.size.width, y: player.position.y + player.size.height * 3), speed: 400)
     }
     
     func move(node: SKNode, to toPoint: CGPoint, speed: CGFloat, removeWhenDone: Bool = false){
@@ -124,27 +127,28 @@ class SquareGameScene: SKScene {
     }
 }
 
+// MARK: SKPhysicsContactDelegate
 extension SquareGameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         if (contact.bodyA.categoryBitMask == PhysicsBodyCategory.player &&
-            contact.bodyB.categoryBitMask == PhysicsBodyCategory.ground) ||
+                contact.bodyB.categoryBitMask == PhysicsBodyCategory.ground) ||
             (contact.bodyA.categoryBitMask == PhysicsBodyCategory.ground &&
-            contact.bodyB.categoryBitMask == PhysicsBodyCategory.player) {
+                contact.bodyB.categoryBitMask == PhysicsBodyCategory.player) {
             isInAir = false
         }
         if (contact.bodyA.categoryBitMask == PhysicsBodyCategory.player &&
-                    contact.bodyB.categoryBitMask == PhysicsBodyCategory.enemy) ||
-                    (contact.bodyA.categoryBitMask == PhysicsBodyCategory.enemy &&
-                    contact.bodyB.categoryBitMask == PhysicsBodyCategory.player) {
+                contact.bodyB.categoryBitMask == PhysicsBodyCategory.enemy) ||
+            (contact.bodyA.categoryBitMask == PhysicsBodyCategory.enemy &&
+                contact.bodyB.categoryBitMask == PhysicsBodyCategory.player) {
             loseAction()
         }
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
         if (contact.bodyA.categoryBitMask == PhysicsBodyCategory.player &&
-            contact.bodyB.categoryBitMask == PhysicsBodyCategory.ground) ||
+                contact.bodyB.categoryBitMask == PhysicsBodyCategory.ground) ||
             (contact.bodyA.categoryBitMask == PhysicsBodyCategory.ground &&
-            contact.bodyB.categoryBitMask == PhysicsBodyCategory.player) {
+                contact.bodyB.categoryBitMask == PhysicsBodyCategory.player) {
             isInAir = true
         }
     }

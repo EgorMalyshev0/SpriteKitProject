@@ -18,7 +18,7 @@
 		DE10CB0A2609F44700440B4B /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10CB092609F44700440B4B /* StartViewController.swift */; };
 		DE10CB112609FF0900440B4B /* SquareGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10CB102609FF0900440B4B /* SquareGameScene.swift */; };
 		DEEDF8CB26122E150024B179 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEDF8CA26122E150024B179 /* PauseViewController.swift */; };
-		DEEDF8D0261252BE0024B179 /* UserDefaultsRecordKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEDF8CF261252BE0024B179 /* UserDefaultsRecordKeys.swift */; };
+		DEEDF8D0261252BE0024B179 /* UserDefaultsRecordKeys + SceneType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEDF8CF261252BE0024B179 /* UserDefaultsRecordKeys + SceneType.swift */; };
 		DEEDF8D3261252E20024B179 /* PhysicsBodyCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEDF8D2261252E20024B179 /* PhysicsBodyCategory.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		DE10CB092609F44700440B4B /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		DE10CB102609FF0900440B4B /* SquareGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareGameScene.swift; sourceTree = "<group>"; };
 		DEEDF8CA26122E150024B179 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
-		DEEDF8CF261252BE0024B179 /* UserDefaultsRecordKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRecordKeys.swift; sourceTree = "<group>"; };
+		DEEDF8CF261252BE0024B179 /* UserDefaultsRecordKeys + SceneType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaultsRecordKeys + SceneType.swift"; sourceTree = "<group>"; };
 		DEEDF8D2261252E20024B179 /* PhysicsBodyCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsBodyCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +75,7 @@
 				DE10CB0E2609FEEE00440B4B /* Controllers */,
 				DE10CAD02608D12A00440B4B /* Main.storyboard */,
 				DE10CAFF2608E15000440B4B /* LaunchScreen.storyboard */,
-				DEEDF8CF261252BE0024B179 /* UserDefaultsRecordKeys.swift */,
+				DEEDF8CF261252BE0024B179 /* UserDefaultsRecordKeys + SceneType.swift */,
 				DEEDF8D2261252E20024B179 /* PhysicsBodyCategory.swift */,
 				DE10CB062609E2EA00440B4B /* atlas.atlas */,
 				DE10CAD32608D12C00440B4B /* Assets.xcassets */,
@@ -177,7 +177,7 @@
 			files = (
 				DE10CB0A2609F44700440B4B /* StartViewController.swift in Sources */,
 				DEEDF8D3261252E20024B179 /* PhysicsBodyCategory.swift in Sources */,
-				DEEDF8D0261252BE0024B179 /* UserDefaultsRecordKeys.swift in Sources */,
+				DEEDF8D0261252BE0024B179 /* UserDefaultsRecordKeys + SceneType.swift in Sources */,
 				DE10CB112609FF0900440B4B /* SquareGameScene.swift in Sources */,
 				DE10CACD2608D12A00440B4B /* CircleGameScene.swift in Sources */,
 				DE10CACF2608D12A00440B4B /* GameViewController.swift in Sources */,
