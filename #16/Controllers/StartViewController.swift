@@ -5,12 +5,20 @@
 //  Created by Egor Malyshev on 23.03.2021.
 //
 
-import UIKit
+import SpriteKit
 
 class StartViewController: UIViewController {
 
+    @IBOutlet weak var skView: SKView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let scene = BearScene(size: skView.bounds.size)
+        scene.scaleMode = .resizeFill
+        
+        skView.ignoresSiblingOrder = true
+        skView.presentScene(scene)
     }
     
     override var prefersStatusBarHidden: Bool {
